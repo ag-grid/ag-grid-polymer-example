@@ -36,25 +36,6 @@ function addRefreshDataViaElement() {
 // wait for the document to be loaded, otherwise
 // ag-Grid will not find the div in the document.
 document.addEventListener("DOMContentLoaded", function () {
-
-    const myGrid = document.querySelector('#myGrid');
-    myGrid.gridOptions = gridOptions;
-
-    // add events to grid option 1 - add an event listener
-    myGrid.addEventListener('columnresized', function (event) {
-        console.log('event via option 1: ' + event.agGridDetails);
-    });
-
-    // add events to grid option 2 - callback on the element
-    myGrid.oncolumnresized = function (event) {
-        console.log('event via option 2: ' + event.agGridDetails);
-    };
-
-    // add events to grid option 3 - callback on the grid options
-    gridOptions.onColumnResized = function (event) {
-        console.log('event via option 3: ' + event);
-    };
-
     addQuickFilterListener();
     addRefreshDataViaApi();
     addRefreshDataViaElement();
