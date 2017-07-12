@@ -1,0 +1,41 @@
+<dom-module id="simple-grid-example">
+    <template>
+        <link rel="stylesheet" href="../../bower_components/ag-grid/dist/styles/ag-grid.css">
+        <link rel="stylesheet" href="../../bower_components/ag-grid/dist/styles/theme-fresh.css">
+
+        <ag-grid-polymer style="height: 130px; width: 350px;display: block;"
+                         class="ag-fresh"
+                         rowData="{{rowData}}"
+                         columnDefs="{{columnDefs}}"
+                         onGridReady="[[onGridReady]]"></ag-grid-polymer>
+    </template>
+
+    <script>
+        class SimpleGridExample extends Polymer.Element {
+            static get is() {
+                return "simple-grid-example";
+            }
+
+            constructor() {
+                super();
+
+                this.columnDefs = [
+                    {headerName: "Make", field: "make"},
+                    {headerName: "Model", field: "model"},
+                    {headerName: "Price", field: "price"}
+                ];
+
+                this.rowData = [
+                    {make: "Toyota", model: "Celica", price: 35000},
+                    {make: "Ford", model: "Mondeo", price: 32000},
+                    {make: "Porsche", model: "Boxter", price: 72000}
+                ];
+            }
+
+            onGridReady() {
+                this.api.sizeColumnsToFit();
+            }
+        }
+        customElements.define(SimpleGridExample.is, SimpleGridExample);
+    </script>
+</dom-module>

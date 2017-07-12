@@ -1,0 +1,6 @@
+{
+  "server": {
+    "baseDir": "./"
+  },
+  "startPath": "/examples/simple-grid/index.html"
+}
