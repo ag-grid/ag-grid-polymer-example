@@ -1,5 +1,5 @@
 const SKILL_TEMPLATE =
-    '<label style="border: 1px solid lightgrey; margin: 4px; padding: 4px;">' +
+    '<div style="border: 1px solid lightgrey; margin: 4px; padding: 4px;">' +
     '  <span>' +
     '    <div style="text-align: center;">SKILL_NAME</div>' +
     '    <div>' +
@@ -7,7 +7,7 @@ const SKILL_TEMPLATE =
     '      <img src="/images/skills/SKILL.png" width="30px"/>' +
     '    </div>' +
     '  </span>' +
-    '</label>';
+    '</div>';
 
 const FILTER_TITLE =
     '<div style="text-align: center; background: lightgray; width: 100%; display: block; border-bottom: 1px solid grey;">' +
@@ -29,7 +29,6 @@ SkillFilter.prototype.init = function (params) {
 };
 
 SkillFilter.prototype.getModel = function () {
-
 };
 
 SkillFilter.prototype.setModel = function (model) {
@@ -38,6 +37,7 @@ SkillFilter.prototype.setModel = function (model) {
 
 SkillFilter.prototype.getGui = function () {
     const eGui = document.createElement('div');
+
     const eInstructions = document.createElement('div');
     eInstructions.innerHTML = FILTER_TITLE.replace('TITLE_NAME', 'Custom Skills Filter');
     eGui.appendChild(eInstructions);
@@ -47,6 +47,7 @@ SkillFilter.prototype.getGui = function () {
     IT_SKILLS.forEach(function (skill, index) {
         const skillName = IT_SKILLS_NAMES[index];
         const eSpan = document.createElement('span');
+        eSpan.style = "float: left";
         const html = SKILL_TEMPLATE.replace("SKILL_NAME", skillName).replace("SKILL", skill);
         eSpan.innerHTML = html;
 
