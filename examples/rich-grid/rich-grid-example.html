@@ -6,7 +6,7 @@
         <div style="width: 800px;">
             <div style="padding: 4px">
                 <div style="float: right;">
-                    <input type="text" id="quickFilterInput" placeholder="Type text to filter..."/>
+                    <input type="text" on-input="quickFilterInput" placeholder="Type text to filter..."/>
                 </div>
                 <div style="padding: 4px;">
                     <b>Employees Skills and Contact Details</b> <span id="rowCount"/>
@@ -15,33 +15,34 @@
                 <div style="padding: 4px;" class="toolbar">
             <span>
                 Grid API:
-                <button onclick="document.querySelector('#myGrid').api.selectAll()">Select All</button>
-                <button onclick="document.querySelector('#myGrid').api.deselectAll()">Clear Selection</button>
+                <button on-click="selectAll">Select All</button>
+                <button on-click="deselectAll">Clear Selection</button>
             </span>
                     <span style="margin-left: 20px;">
                 Column API:
-                <button onclick="document.querySelector('#myGrid').columnApi.setColumnVisible('country', false)">Hide Country Column</button>
-                <button onclick="document.querySelector('#myGrid').columnApi.setColumnVisible('country', true)">Show Country Column</button>
+                <button on-click="hideCountry">Hide Country Column</button>
+                <button on-click="showCountry">Show Country Column</button>
             </span>
                 </div>
                 <div style="float: right;" class="toolbar">
-                    <button id="btDestroyGrid">Destroy Grid</button>
+                    <button id="destroyButton" on-click="destroyGrid">Destroy Grid</button>
                 </div>
                 <div style="padding: 4px;" class="toolbar">
                     <label>
-                        <input type="checkbox" onchange="document.querySelector('#myGrid').showToolPanel=this.checked"/>
+                        <input id="toolPanelToggle" type="checkbox"/>
                         Show Tool Panel
                     </label>
-                    <button id="btRefreshDataViaApi">Refresh Data via API</button>
-                    <button id="btRefreshDataViaElement">Refresh Data via Element</button>
+                    <button on-click="refreshDataViaApi">Refresh Data via API</button>
+                    <button on-click="refreshDataViaElement">Refresh Data via Element</button>
                 </div>
                 <div style="clear: both;"/>
 
+                <!-- Properties can be either hypenated or camelCased-->
                 <ag-grid-polymer id="myGrid"
                                  style="height: 350px; width: 800px;display: block;"
                                  class="ag-fresh ag-basic"
-                                 enable-col-resize
-                                 enable-sorting
+                                 enableColResize
+                                 enableSorting
                                  enable-filter
                                  group-headers
                                  suppress-row-click-selection
@@ -50,7 +51,7 @@
                                  row-height="22"
                                  row-selection="multiple"
                                  pinned-column-count="3"
-                                 onGridReady="[[onGridReady]]"></ag-grid-polymer>
+                                 on-grid-ready="[[onGridReady]]"></ag-grid-polymer>
             </div>
         </div>
     </template>
@@ -167,6 +168,44 @@
                 return "rich-grid-example";
             }
 
+            selectAll() {
+                this.gridOptions.api.selectAll()
+            }
+
+            deselectAll() {
+                this.gridOptions.api.deselectAll()
+            }
+
+            hideCountry() {
+                this.gridOptions.columnApi.setColumnVisible('country', false)
+            }
+
+            showCountry() {
+                this.gridOptions.columnApi.setColumnVisible('country', true)
+            }
+
+            toggleToolPanel(e) {
+                this.$.myGrid.showToolPanel = e.target.checked;
+            }
+
+            refreshDataViaApi() {
+                this.gridOptions.api.setRowData(this.createRowData());
+            }
+
+            refreshDataViaElement() {
+                this.$.myGrid.rowData = this.createRowData();
+            }
+
+            destroyGrid() {
+                this.gridOptions.api.destroy();
+                this.$.destroyButton.disabled = true;
+            }
+
+            quickFilterInput(e) {
+                const text = e.target.value;
+                this.gridOptions.api.setQuickFilter(text);
+            }
+
             constructor() {
                 super();
 
@@ -234,7 +273,8 @@
                     columnDefs: columnDefs,
                     rowData: this.createRowData(),
                     // a callback that gets called whenever the grids data changes
-                    onModelUpdated: this.modelUpdated.bind(this)
+                    // can access RichGridExample's "this" as we're binding to it
+                    onModelUpdated: this.onModelUpdated.bind(this)
                 };
             }
 
@@ -324,6 +364,17 @@
                 super.ready();
                 this.$.myGrid.gridOptions = this.gridOptions;
 
+                // illustrates an alternative to using on-click or on-tap
+                this.$.toolPanelToggle.addEventListener('click', e => {
+                    this.toggleToolPanel(e)
+                });
+
+
+                // add the same event in 3 different ways:
+                // 1 - adding event listener to dom element
+                // 2 - via direct element property
+                // 3 - via gridOptions
+
                 // add events to grid option 1 - add an event listener
                 this.$.myGrid.addEventListener('columnresized', function (event) {
                     console.log('event via option 1: ' + event.agGridDetails);
@@ -338,10 +389,16 @@
                 this.gridOptions.onColumnResized = function (event) {
                     console.log('event via option 3: ' + event);
                 };
-
             }
 
-            modelUpdated() {
+            // can only rely on this.api and this.columnApi here - "this" !== RichGridExample's "this"
+            // as we defined ths event in the ag-grid-polymer element
+            onGridReady(params) {
+                console.log("Grid is now ready");
+            }
+
+            // can access RichGridExample's "this" as we bound to it in gridOptions
+            onModelUpdated() {
                 const model = this.gridOptions.api.getModel();
                 const totalRows = this.gridOptions.rowData.length;
                 const processedRows = model.getPageLastRow() - 1;
