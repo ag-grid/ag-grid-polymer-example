@@ -36,10 +36,6 @@
                 };
             }
 
-            onCellValueChanged($event) {
-                this.gridOptions.api.refreshCells([$event.node],["cube"]);
-            }
-
             methodFromParent(cell) {
                 alert(`"Parent Component Method from ${cell}!`);
             }

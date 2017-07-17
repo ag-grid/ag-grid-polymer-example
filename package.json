@@ -6,7 +6,8 @@
   "scripts": {
     "simple": "lite-server -c simple-bs-config.json",
     "rich": "lite-server -c rich-bs-config.json",
-    "dynamic": "lite-server -c dynamic-bs-config.json"
+    "dynamic": "lite-server -c dynamic-bs-config.json",
+    "rich-dynamic": "lite-server -c rich-dynamic-bs-config.json"
   },
   "repository": {
     "type": "git",
