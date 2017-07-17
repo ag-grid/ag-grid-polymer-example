@@ -1,0 +1,6 @@
+{
+  "server": {
+    "baseDir": "./"
+  },
+  "startPath": "/examples/dynamic-components-grid/index.html"
+}

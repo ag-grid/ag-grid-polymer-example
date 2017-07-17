@@ -134,8 +134,7 @@
                 this.gridOptions = {
                     columnDefs: columnDefs,
                     rowData: this.createRowData(),
-                    // a callback that gets called whenever the grids data changes
-                    // can access RichGridExample's "this" as we're binding to it
+                    rowSelection: 'single',
                     onModelUpdated: this.onModelUpdated.bind(this)
                 };
             }
@@ -291,12 +290,12 @@
                 };
             }
 
-            // can only rely on this.api and this.columnApi here - "this" !== RichGridExample's "this"
-            // as we defined ths event in the ag-grid-polymer element
+            // events declared in the actual element, as this one is, will have "this" == gridOptions
             onGridReady(params) {
                 console.log("Grid is now ready");
             }
 
+            // this = the RichGridExample element
             // can access RichGridExample's "this" as we bound to it in gridOptions
             onModelUpdated() {
                 const model = this.gridOptions.api.getModel();
