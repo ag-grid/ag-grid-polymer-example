@@ -1,0 +1,6 @@
+{
+  "server": {
+    "baseDir": "./"
+  },
+  "startPath": "/examples/editor-components-grid/index.html"
+}
