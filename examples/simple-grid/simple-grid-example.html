@@ -3,11 +3,14 @@
         <link rel="stylesheet" href="../../bower_components/ag-grid/dist/styles/ag-grid.css">
         <link rel="stylesheet" href="../../bower_components/ag-grid/dist/styles/theme-fresh.css">
 
-        <ag-grid-polymer style="height: 130px; width: 350px;display: block;"
-                         class="ag-fresh"
-                         rowData="{{rowData}}"
-                         columnDefs="{{columnDefs}}"
-                         onGridReady="[[onGridReady]]"></ag-grid-polymer>
+        <div style="width: 800px;">
+            <h1>Simple ag-Grid Polymer Example</h1>
+            <ag-grid-polymer style="width: 100%px; height: 350px; display: block;"
+                             class="ag-fresh"
+                             rowData="{{rowData}}"
+                             columnDefs="{{columnDefs}}"
+                             onGridReady="[[onGridReady]]"></ag-grid-polymer>
+        </div>
     </template>
 
     <script>
