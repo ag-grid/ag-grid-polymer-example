@@ -66,7 +66,11 @@
             }
 
             onGridReady() {
-                this.api.sizeColumnsToFit();
+                // this check is only necessary at the component could have been created, but not currently visible
+                // this check prevents the grid warning about resizing a grid with 0 width
+                if(this.getBoundingClientRect().width) {
+                    this.api.sizeColumnsToFit();
+                }
             }
         }
         customElements.define(RichDynamicGridExample.is, RichDynamicGridExample);

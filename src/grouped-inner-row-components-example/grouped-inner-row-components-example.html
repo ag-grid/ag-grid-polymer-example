@@ -9,7 +9,7 @@
             <ag-grid-polymer style="width: 100%; height: 350px; display: block;"
                              class="ag-fresh"
                              gridOptions="{{gridOptions}}"
-                             onGridReady="[[onGridReady]]"></ag-grid-polymer>
+                             onGridSizeChanged="[[gridSizeChanged]]"></ag-grid-polymer>
         </div>
     </template>
 
@@ -108,9 +108,14 @@
                 ];
             }
 
-            onGridReady() {
-                this.api.sizeColumnsToFit();
+            gridSizeChanged() {
+                // this check is only necessary at the component could have been created, but not currently visible
+                // this check prevents the grid warning about resizing a grid with 0 width
+                if (this.getBoundingClientRect().width) {
+                    this.api.sizeColumnsToFit();
+                }
             }
+
         }
         customElements.define(GroupedInnerRowExample.is, GroupedInnerRowExample);
     </script>
