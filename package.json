@@ -4,11 +4,7 @@
   "description": "ag-Grid Polymer Web Component Examples",
   "main": "index.js",
   "scripts": {
-    "simple": "lite-server -c simple-bs-config.json",
-    "rich": "lite-server -c rich-bs-config.json",
-    "dynamic": "lite-server -c dynamic-bs-config.json",
-    "rich-dynamic": "lite-server -c rich-dynamic-bs-config.json",
-    "editor": "lite-server -c editor-bs-config.json"
+    "examples": "lite-server -c examples-bs-config.json"
   },
   "repository": {
     "type": "git",
