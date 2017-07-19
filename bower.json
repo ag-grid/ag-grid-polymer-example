@@ -26,6 +26,7 @@
     "ag-grid-polymer": "^0.0.9",
     "polymer": "Polymer/polymer#^2.0.0",
     "iron-pages": "2.0.0",
-    "paper-tabs": "2.0.0"
+    "paper-tabs": "2.0.0",
+    "paper-slider": "^2.0.2"
   }
 }
