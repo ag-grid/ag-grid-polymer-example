@@ -45,7 +45,7 @@
 
                 <!-- Properties can be either hypenated or camelCased-->
                 <ag-grid-polymer id="myGrid"
-                                 style="height: 350px; width: 800px;display: block;"
+                                 style="height: 350px; width: 800px;"
                                  class="ag-fresh ag-basic"
                                  enableColResize
                                  enableSorting
@@ -276,19 +276,19 @@
                 // 3 - via gridOptions
 
                 // add events to grid option 1 - add an event listener
-                this.$.myGrid.addEventListener('columnresized', function (event) {
+                this.$.myGrid.addEventListener('columnresized', (event) => {
                     console.log('event via option 1: ' + event.agGridDetails);
-                });
+                })
 
                 // add events to grid option 2 - callback on the element
-                this.$.myGrid.oncolumnresized = function (event) {
+                this.$.myGrid.oncolumnresized = (event) => {
                     console.log('event via option 2: ' + event.agGridDetails);
-                };
+                }
 
                 // add events to grid option 3 - callback on the grid options
-                this.gridOptions.onColumnResized = function (event) {
+                this.gridOptions.onColumnResized = (event) => {
                     console.log('event via option 3: ' + event);
-                };
+                }
             }
 
             // events declared in the actual element, as this one is, will have "this" == gridOptions

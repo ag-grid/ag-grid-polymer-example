@@ -21,12 +21,12 @@
     "tests"
   ],
   "dependencies": {
-    "ag-grid": "11.0.0",
-    "ag-grid-enterprise": "11.0.0",
-    "ag-grid-polymer": "^0.0.9",
-    "polymer": "Polymer/polymer#^2.0.0",
+    "ag-grid": "12.0.0",
+    "ag-grid-enterprise": "12.0.0",
+    "ag-grid-polymer": "12.0.0",
+    "polymer": "Polymer/polymer#2.0.2",
     "iron-pages": "2.0.0",
     "paper-tabs": "2.0.0",
-    "paper-slider": "^2.0.2"
+    "paper-slider": "2.0.2"
   }
 }

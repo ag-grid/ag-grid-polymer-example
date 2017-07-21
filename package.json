@@ -1,10 +1,10 @@
 {
   "name": "ag-grid-polymer-example",
-  "version": "0.0.1",
+  "version": "12.0.0",
   "description": "ag-Grid Polymer Web Component Examples",
   "main": "index.js",
   "scripts": {
-    "examples": "lite-server -c examples-bs-config.json"
+    "start": "lite-server -c examples-bs-config.json"
   },
   "repository": {
     "type": "git",
