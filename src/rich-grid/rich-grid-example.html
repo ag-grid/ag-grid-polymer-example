@@ -300,8 +300,8 @@
             // can access RichGridExample's "this" as we bound to it in gridOptions
             onModelUpdated() {
                 const model = this.gridOptions.api.getModel();
-                const totalRows = this.gridOptions.rowData.length;
-                const processedRows = model.getPageLastRow() - 1;
+                const totalRows = model.getTopLevelNodes().length;
+                const processedRows = model.getRowCount();
                 this.$.rowCount.innerHTML = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString();
             }
         }
