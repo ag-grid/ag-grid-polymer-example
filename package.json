@@ -4,7 +4,8 @@
   "description": "ag-Grid Polymer Web Component Examples",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server -c examples-bs-config.json"
+    "start": "lite-server -c examples-bs-config.json",
+    "copy-to-ag-docs":"cp -r src ../ag-grid-docs/src/framework-examples/polymer-examples/"
   },
   "repository": {
     "type": "git",
