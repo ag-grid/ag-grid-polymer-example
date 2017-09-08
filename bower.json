@@ -7,7 +7,6 @@
   ],
   "license": "MIT",
   "keywords": [
-    "ag-grid",
     "polymer",
     "web",
     "component"
@@ -21,9 +20,9 @@
     "tests"
   ],
   "dependencies": {
-    "ag-grid": "12.0.0",
-    "ag-grid-enterprise": "12.0.0",
-    "ag-grid-polymer": "12.0.0",
+    "ag-grid": "13.1.x",
+    "ag-grid-enterprise": "13.1.x",
+    "ag-grid-polymer": "13.1.x",
     "polymer": "Polymer/polymer#2.0.2",
     "iron-pages": "2.0.0",
     "paper-tabs": "2.0.0",
