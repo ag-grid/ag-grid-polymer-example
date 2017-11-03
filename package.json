@@ -1,6 +1,6 @@
 {
   "name": "ag-grid-polymer-example",
-  "version": "12.0.0",
+  "version": "14.0.0",
   "description": "ag-Grid Polymer Web Component Examples",
   "main": "index.js",
   "scripts": {
