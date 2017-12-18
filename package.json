@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "bower install",
     "start": "lite-server -c examples-bs-config.json",
-    "copy-to-ag-docs":"cp -r src ../ag-grid-docs/src/framework-examples/polymer-examples/"
+    "copy-to-ag-docs": "cp -r src ../ag-grid-docs/src/framework-examples/polymer-examples/"
   },
   "repository": {
     "type": "git",
