@@ -2,7 +2,10 @@
   "name": "ag-grid-polymer-example",
   "version": "19.0.0",
   "description": "ag-Grid Polymer 3 Web Component Examples",
-  "main": "index.js",
+  "scripts": {
+    "start": "polymer serve --open",
+    "build": "polymer build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ceolter/ag-grid-polymer-example.git"
