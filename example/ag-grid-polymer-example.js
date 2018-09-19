@@ -43,7 +43,7 @@ class AgGridPolymerExample extends PolymerElement {
         ];
 
         this.components = {
-                clickableCellRenderer: ClickableCellRenderer,
+            clickableCellRenderer: ClickableCellRenderer,
         }
     }
 
