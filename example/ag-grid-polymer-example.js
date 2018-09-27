@@ -6,8 +6,8 @@ import ClickableCellRenderer from './clickable-renderer'
 class AgGridPolymerExample extends PolymerElement {
     static get template() {
         return html`
-            <link rel="stylesheet" href="../../node_modules/ag-grid-community/dist/styles/ag-grid.css">
-            <link rel="stylesheet" href="../../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css">
+            <link rel="stylesheet" href="../node_modules/ag-grid-community/dist/styles/ag-grid.css">
+            <link rel="stylesheet" href="../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css">
           
             <div style="width: 800px;">
                 <h1>Simple ag-Grid Polymer 3 Example</h1>
