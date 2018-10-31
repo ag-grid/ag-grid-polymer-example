@@ -1,12 +1,10 @@
 {
   "name": "ag-grid-polymer-example",
-  "version": "18.0.0",
-  "description": "ag-Grid Polymer Web Component Examples",
-  "main": "index.js",
+  "version": "19.1.1",
+  "description": "ag-Grid Polymer 3 Web Component Examples",
   "scripts": {
-    "postinstall": "bower install",
-    "start": "lite-server -c examples-bs-config.json",
-    "copy-to-ag-docs": "cp -r src ../ag-grid-docs/src/framework-examples/polymer-examples/"
+    "start": "polymer serve --open",
+    "build": "polymer build"
   },
   "repository": {
     "type": "git",
@@ -21,10 +19,17 @@
   "author": "Sean Landsman <sean@thelandsmans.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ceolter/ag-grid-polymer-example/issues"
+    "url": "https://github.com/ag-grid/ag-grid-polymer-example/issues"
   },
-  "homepage": "https://github.com/ceolter/ag-grid-polymer-example#readme",
-  "devDependencies": {
-    "lite-server": "2.3.0"
+  "homepage": "https://github.com/ag-grid/ag-grid-polymer-example#readme",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0-pre.12",
+    "@webcomponents/webcomponentsjs": "^1.0.20",
+    "ag-grid-community": "^19.1.0",
+    "ag-grid-polymer": "^19.1.0",
+    "polymer-cli": "1.8.0"
+  },
+  "resolutions": {
+    "@webcomponents/webcomponentsjs": "1.0.20"
   }
 }
