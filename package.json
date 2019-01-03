@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/ag-grid/ag-grid-polymer-example#readme",
   "dependencies": {
-    "@polymer/polymer": "^3.0.0-pre.12",
-    "@webcomponents/webcomponentsjs": "^1.0.20",
+    "@polymer/polymer": "3.1.0",
+    "@webcomponents/webcomponentsjs": "2.2.1",
     "ag-grid-community": "^19.1.0",
     "ag-grid-polymer": "^19.1.0",
-    "polymer-cli": "1.8.0"
+    "polymer-cli": "1.9.4"
   },
   "resolutions": {
-    "@webcomponents/webcomponentsjs": "1.0.20"
+    "@webcomponents/webcomponentsjs": "2.2.1"
   }
 }
