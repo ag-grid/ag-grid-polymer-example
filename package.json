@@ -1,6 +1,6 @@
 {
   "name": "ag-grid-polymer-example",
-  "version": "19.1.2",
+  "version": "21.0.0",
   "description": "ag-Grid Polymer 3 Web Component Examples",
   "scripts": {
     "start": "polymer serve --open",
