@@ -1,6 +1,6 @@
 {
   "name": "ag-grid-polymer-example",
-  "version": "20.2.0",
+  "version": "21.0.0",
   "description": "ag-Grid Polymer 3 Web Component Examples",
   "scripts": {
     "start": "polymer serve --open",
@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/ag-grid/ag-grid-polymer-example#readme",
   "dependencies": {
-    "@polymer/polymer": "3.1.0",
-    "@webcomponents/webcomponentsjs": "2.2.7",
-    "ag-grid-community": "^20.2.0",
-    "ag-grid-polymer": "^20.2.0",
-    "polymer-cli": "1.9.6"
+    "@polymer/polymer": "3.2.0",
+    "@webcomponents/webcomponentsjs": "2.2.10",
+    "ag-grid-community": "^21.0.0",
+    "ag-grid-polymer": "^21.0.0",
+    "polymer-cli": "1.9.9"
   },
   "resolutions": {
-    "@webcomponents/webcomponentsjs": "2.2.7"
+    "@webcomponents/webcomponentsjs": "2.2.10"
   }
 }
