@@ -1,5 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import 'ag-grid-polymer';
+import '@ag-community/grid-polymer';
 import "@ag-community/client-side-row-model";
 
 import ClickableCellRenderer from './clickable-renderer'
