@@ -1,14 +1,14 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@ag-community/grid-polymer';
-import "@ag-community/client-side-row-model";
+import "@ag-community/grid-client-side-row-model";
 
 import ClickableCellRenderer from './clickable-renderer'
 
 class AgGridPolymerExample extends PolymerElement {
     static get template() {
         return html`
-            <link rel="stylesheet" href="../node_modules/ag-grid-community/dist/styles/ag-grid.css">
-            <link rel="stylesheet" href="../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css">
+            <link rel="stylesheet" href="../node_modules/@ag-community/grid-core/dist/styles/ag-grid.css">
+            <link rel="stylesheet" href="../node_modules/@ag-community/grid-core/dist/styles/ag-theme-balham.css">
           
             <div style="width: 800px;">
                 <h1>Simple ag-Grid Polymer 3 Example</h1>
