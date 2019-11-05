@@ -1,5 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@ag-grid-community/grid-polymer';
+import '@ag-grid-community/polymer';
 import "@ag-grid-community/client-side-row-model";
 
 import ClickableCellRenderer from './clickable-renderer'
@@ -7,8 +7,8 @@ import ClickableCellRenderer from './clickable-renderer'
 class AgGridPolymerExample extends PolymerElement {
     static get template() {
         return html`
-            <link rel="stylesheet" href="../node_modules/@ag-grid-community/grid-core/dist/styles/ag-grid.css">
-            <link rel="stylesheet" href="../node_modules/@ag-grid-community/grid-core/dist/styles/ag-theme-balham.css">
+            <link rel="stylesheet" href="../node_modules/@ag-grid-community/core/dist/styles/ag-grid.css">
+            <link rel="stylesheet" href="../node_modules/@ag-grid-community/core/dist/styles/ag-theme-balham.css">
           
             <div style="width: 800px;">
                 <h1>Simple ag-Grid Polymer 3 Example</h1>

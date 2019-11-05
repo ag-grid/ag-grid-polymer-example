@@ -1,5 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@ag-grid-community/grid-polymer';
+import '@ag-grid-community/polymer';
 
 export default class ClickableCellRenderer extends PolymerElement {
     static get template() {
