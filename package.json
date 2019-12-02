@@ -24,8 +24,7 @@
   },
   "homepage": "https://github.com/ag-grid/ag-grid-polymer-example#readme",
   "dependencies": {
-    "@ag-grid-community/client-side-row-model": "~22.1.0",
-    "@ag-grid-community/core": "~22.1.0",
+    "@ag-grid-community/all-modules": "~22.1.0",
     "@ag-grid-community/polymer": "~22.1.0",
     "@polymer/polymer": "3.2.0",
     "@webcomponents/webcomponentsjs": "2.2.10",
