@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "start": "polymer serve --open",
-    "build": "polymer build"
+    "build": "polymer build && npm run hash",
+    "hash": "sh ./hashDirectory.sh > .hash"
   },
   "repository": {
     "type": "git",
