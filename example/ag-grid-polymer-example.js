@@ -10,7 +10,7 @@ class AgGridPolymerExample extends PolymerElement {
             <link rel="stylesheet" href="../node_modules/@ag-grid-community/all-modules/dist/styles/ag-theme-alpine.css">
           
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; padding: 10px;">
-                <h1>Simple ag-Grid Polymer 3 Example</h1>
+                <h1>Simple AG Grid Polymer 3 Example</h1>
                 <ag-grid-polymer style="width: 800px; height: 250px;"
                                  class="ag-theme-alpine"
                                  rowData="{{rowData}}"
