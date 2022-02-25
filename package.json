@@ -26,6 +26,7 @@
   "homepage": "https://github.com/ag-grid/ag-grid-polymer-example#readme",
   "dependencies": {
     "@ag-grid-community/all-modules": "~26.2.0",
+    "@ag-grid-enterprise/all-modules": "~26.2.0",
     "@ag-grid-community/polymer": "~26.2.0",
     "@polymer/polymer": "3.4.1",
     "@webcomponents/webcomponentsjs": "2.4.3",
